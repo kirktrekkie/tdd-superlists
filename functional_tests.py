@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import unittest
 
 class NewVisitorTest(unittest.TestCase):
@@ -18,7 +19,7 @@ class NewVisitorTest(unittest.TestCase):
         #She notice the page title and header mention To-do lists
         self.assertIn('To-Do', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertin('To-Do', header_text)
+        self.assertIn('To-Do', header_text)
 
         #She is invited to add a to-do item stight away
         inputbox = self.browser.find_element_by_id('id_new_item')
